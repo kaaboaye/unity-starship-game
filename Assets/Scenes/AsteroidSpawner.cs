@@ -37,7 +37,7 @@ public class AsteroidSpawner : MonoBehaviour
             var asteroid = asteroids[Random.Range(0, asteroids.Length)];
             var position = new Vector3(Random.Range(-40f, 40f), 0, 70);
 
-            var spawned = Instantiate(asteroid, position, Random.rotation);
+            Instantiate(asteroid, position, Random.rotation);
         }
     }
 
