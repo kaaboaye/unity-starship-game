@@ -22,10 +22,16 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         var moveHorizontal = Input.GetAxis("Horizontal");
+        var moveVerical = Input.GetAxis("Vertical");
 
         var newPostion = Transform.position;
+
         newPostion.x += Time.deltaTime * moveHorizontal * velocity;
         newPostion.x = Mathf.Clamp(newPostion.x, -40f, 40f);
+
+        newPostion.z += Time.deltaTime * moveVerical * velocity;
+        newPostion.z = Mathf.Clamp(newPostion.z, 0f, 60f);
+
         Transform.position = newPostion;
 
         var newRotation = Transform.rotation;
